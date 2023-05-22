@@ -1,13 +1,206 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  background-color: #343541;
+  display: flex;
+}
+
+.side-bar {
+  background-color: #202123;
+  height: 100vh;
+  width: 244px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+button {
+  border: solid 0.5px #08c067;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+nav {
+  border-top: solid 0.5px rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  margin: 10px;
+}
+
+.history {
+  padding: 5px;
+  margin: 10px;
+  height: 100%;
+}
+
+.history li {
+  list-style-type: none;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #343541;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.info {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  padding: 10px;
+}
+
+.bottom-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+.input-wrap {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 12px 15px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px, 
+    rgba(0, 0, 0, 0.05) 0 -12px 30px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px,
+    rgba(0, 0, 0, 0.05) 0 12px 3px,
+    rgba(0, 0, 0, 0.05) 0 -3px 5px;
+  padding-right: 35px;
+}
+
+input {
+  font-size: 20px;
+  width: 100%;
+  background-color: transparent;
+  border:  none;
+}
+
+input:focus {
+  outline: none;
+}
+
+#submit {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  cursor: pointer; 
+  padding-right: 10px;
+  color:#08c067;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  max-width: 100%;
+  overflow-y: scroll;
+}
+
+.feed li {
+  display: flex;
+  background-color: #343541;
+  padding: 20px 50px 20px 20px;
+  margin: 20px 0;
+  max-width: 100%;
+  border-top: 0.5px solid#08c067;
+}
+
+.feed p {
+  color:rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.feed p:first-child {
+  text-transform: capitalize;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.feed p .role {
+  max-width: 100px;
+}
+
+#loading {
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid #f3f3f3;
+  border-top: 6px solid #08c067;
+  border-radius: 100%;
+  margin: auto auto 20px;
+  display: none;
+  animation: spin 1s infinite linear;
+}
+
+#loading.display {
+  display: block;
+}
+
+.custom {
+  color:#08c067;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main h1 {
+    font-size: 14px;
+  }
+  nav p {
+    font-size: 12px;
+  }
+  .side-bar button {
+    font-size: 12px;
+  }
+  .info {
+    font-size: 9px;
+  }
+  .input-container {
+    max-width: 90%;
+  }
+  input {
+    font-size: 14px;
+  }
+  #submit {
+    bottom: 13px;
+  }
 }
