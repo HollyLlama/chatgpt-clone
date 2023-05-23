@@ -46,7 +46,6 @@ const App = () => {
     setMessage(null)
   }
 
-
   const getMessages = async () => {
     const options = {
       method: "POST",
@@ -54,14 +53,19 @@ const App = () => {
         message: value
       }),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
       }
     }
     try {
      displayLoading()
      const response = await fetch("http://localhost:8000/completions", options)
      const data = await response.json()
-     setMessage(data.choices[0].message)
+     if (data.choices && data.choices.length > 0){
+      setMessage(data.choices[0].message)
+     } else {
+      console.error("Invalid response data: choices array is empty or undefined");
+     }
     } catch (error) {
       console.error(error)
     }

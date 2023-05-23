@@ -6,7 +6,7 @@ const app = express()
 app.use(json())
 app.use(cors())
 
-const API_KEY = process.env.API_KEY
+const API_KEY = process.env.REACT_APP_API_KEY
 
 app.post("/completions", async (req, res) => {
   const options = {
