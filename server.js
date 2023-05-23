@@ -10,7 +10,7 @@ app.use(cors());
 const API_KEY = process.env.REACT_APP_API_KEY
 const API_URL = "https://api.openai.com/v1/chat/completions";
 
-app.post("/completions", async (req, res) => {
+app.post("/chatgpt-clone-react", async (req, res) => {
   const options = {
     method:  "POST",
     headers: {
