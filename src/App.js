@@ -54,12 +54,11 @@ const App = () => {
       }),
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
-      }
-    }
+      },
+    };
     try {
-     displayLoading()
-     const response = await fetch("https://api.openai.com/v1/chat/completions", options)
+     displayLoading();
+     const response = await fetch("/completions", options)
      const data = await response.json()
      if (data.choices && data.choices.length > 0){
       setMessage(data.choices[0].message)
@@ -67,9 +66,9 @@ const App = () => {
       console.error("Invalid response data: choices array is empty or undefined");
      }
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-    hideLoading()
+    hideLoading();
   }
 
   const handleKeyDown = (e) => {
