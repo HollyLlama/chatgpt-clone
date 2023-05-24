@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# HollyLlamaGPT React App
+
+A conversational AI app using ChatGPT OpenAI's GPT-3 language model via its API. This app was built with Create React App and is based on freecodecamp's ChatGPT Course - Use The OpenAI API to Code 5 Projects (https://www.youtube.com/watch?v=uRQH2CFvedY).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
